@@ -30,6 +30,22 @@ abbr switch () {}
 			break;
 	}
 
+snippet case
+abbr case : break;
+	case ${1:#:Variable} :
+		${0:TARGET}
+		break;
+
+snippet List
+alias list
+abbr List< > list = new List< >();
+	List< ${1:#:type} > ${2:#:name} = new List< ${0:TARGET} >();
+
+snippet Dictionary
+alias dictionary
+abbr Dictionary< > dict = new Dictionary< >();
+	Dictionary< ${1:#:type}, ${2:#:type} > ${3:#:name} = new Dictionary< ${4:#:type}, ${0:TARGET} >();
+
 snippet Debug.Log
 alias log
 abbr Debug.Log( "" )
