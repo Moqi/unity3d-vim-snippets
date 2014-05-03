@@ -98,6 +98,24 @@ abbr void FixedUpdate () {}
 		${0:TARGET}
 	}
 
+snippet IEnumerator () {}
+alias ienumerator, enumerator
+abbr IEnumerator name ( type paramter ) {}
+	IEnumerator ${1:#:name} ( ${2:#:type} ${3:#:parameter} ) {
+		${0:TARGET}
+	}
+
+snippet StartCoroutine
+alias startcoroutine, coroutine
+abbr StartCoroutine( "name" );
+	StartCoroutine( "${0:TARGET}" );
+	
+snippet StopCoroutine
+alias stopcoroutine, coroutine
+abbr StopCoroutine( "name" );
+	StopCoroutine( "${0:TARGET}" );
+	
+
 snippet GetComponent
 alias getcomponent
 abbr GetComponent< >();
