@@ -1,4 +1,5 @@
 snippet if () {}
+alias condition
 abbr if ( condition ) {}
 	if ( ${1:#:condition} ) {
 		${0:TARGET}
@@ -48,27 +49,27 @@ abbr case : break;
 		${0:TARGET}
 		break;
 
-snippet List<>
+snippet List
 abbr List< type > list = new List< type >();
 	List< ${1:#:type} > ${2:#:name} = new List< ${0:TARGET} >();
 
-snippet new List<>();
+snippet newList
 abbr new List< type >();
 	List< ${0:TARGET} >();
 
-snippet Stack<>
+snippet Stack
 abbr Stack< type > stack = new Stack< type >();
 	Stack< ${1:#:type} > ${2:#:name} = new Stack< ${3:#:type} >();
 
-snippet new Stack<>();
+snippet newStack
 abbr new Stack< type >();
 	new Stack< ${0:TARGET} >();
 
-snippet Dictionary<> 
+snippet Dictionary
 abbr Dictionary< type > dict = new Dictionary< type >();
 	Dictionary< ${1:#:type}, ${2:#:type} > ${3:#:name} = new Dictionary< ${4:#:type}, ${0:TARGET} >();
 	
-snippet new Dictionary<>();
+snippet newDictionary
 abbr new Dictionary< type >();
 	new Dictionary< ${1:#:type} >();
 
@@ -88,115 +89,133 @@ snippet Debug.LogException
 abbr Debug.LogException( "" ) 
 	Debug.LogException( "${1:#:Info}" + ${0:TARGET} );
 
-snippet void Awake () {}
+snippet Awake
+alias voidAwake
 abbr void Awake () {}
 	void Awake () {
 		${0:TARGET}
 	}
 
-snippet void Start () {}
+snippet Start
+alias voidStart
 abbr void Start () {}
 	void Start () {
 		${0:TARGET}
 	}
 
-snippet void OnEnable () {}
+snippet OnEnable
+alias voidOnEnable
 abbr void OnEnable () {}
 	void OnEnable () {
 		${0:TARGET}
 	}
 
-snippet void FixedUpdate
+snippet FixedUpdate
+alias voidFixedUpdate
 abbr void FixedUpdate () {}
 	void FixedUpdate () {
 		${0:TARGET}
 	}
 
-snippet void Update
+snippet Update
+alias voidUpdate
 abbr void Update () {}
 	void Update () {
 		${0:TARGET}
 	}
 
-snippet void LateUpdate
+snippet LateUpdate
+alias voidLateUpdate
 abbr void LateUpdate () {}
 	void LateUpdate () {
 		${0:TARGET}
 	}
 
-snippet void OnDisable () {}
+snippet OnDisable
+alias voidOnDisable
 abbr void OnDisable () {}
 	void OnDisable () {
 		${0:TARGET}
 	}
 
-snippet void OnDestroy () {}
+snippet OnDestroy
+alias voidOnDestroy
 abbr void OnDestroy () {}
 	void OnDestroy () {
 		${0:TARGET}
 	}
 
-snippet void OnGUI
+snippet OnGUI
+alias voidOnGUI
 abbr void OnGUI () {}
 	void OnGUI () {
 		${0:TARGET}
 	}
 
-snippet void OnCollisionEnter () {}
+snippet OnCollisionEnter
+alias voidOnCollisionEnter
 abbr void OnCollisionEnter () {}
 	void OnCollisionEnter () {
 		${0:TARGET}
 	}
 
-snippet void OnCollisionStay () {}
+snippet OnCollisionStay
+alias voidOnCollisionStay
 abbr void OnCollisionStay () {}
 	void OnCollisionStay () {
 		${0:TARGET}
 	}
 
-snippet void OnCollisionExit () {}
+snippet OnCollisionExit
+alias voidOnCollisionExit
 abbr void OnCollisionExit () {}
 	void OnCollisionExit () {
 		${0:TARGET}
 	}
 	
-snippet void OnTriggerEnter () {}
+snippet OnTriggerEnter
+alias voidOnTriggerEnter
 abbr void OnTriggerEnter () {}
 	void OnTriggerEnter () {
 		${0:TARGET}
 	}
 
-snippet void OnTriggerStay () {}
+snippet OnTriggerStay
+alias voidOnTriggerStayStay
 abbr void OnTriggerStay () {}
 	void OnTriggerStay () {
 		${0:TARGET}
 	}
 
-snippet void OnTriggerExit () {}
+snippet OnTriggerExit
+alias voidOnTriggerExit
 abbr void OnTriggerExit () {}
 	void OnTriggerExit () {
 		${0:TARGET}
 	}
 
-snippet void OnApplicationFocus () {}
+snippet OnApplicationFocus
+alias voidOnApplicationFocus 
 abbr void OnApplicationFocus () {}
 	void OnApplicationFocus () {
 		${0:TARGET}
 	}
 
-snippet void OnApplicationPause () {}
+snippet OnApplicationPause
+alias voidOnApplicationPause
 abbr void OnApplicationPause () {}
 	void OnApplicationPause () {
 		${0:TARGET}
 	}
 
-snippet void OnApplicationQuit () {}
+snippet OnApplicationQuit
+alias voidOnApplicationQuit
 abbr void OnApplicationQuit () {}
 	void OnApplicationQuit () {
 		${0:TARGET}
 	}
 
-snippet IEnumerator () {}
+snippet IEnumerator
 abbr IEnumerator name () {}
 	IEnumerator ${1:#:name} () {
 		${0:TARGET}
@@ -214,7 +233,7 @@ snippet StopAllCoroutine
 abbr StopAllCoroutine( "name" );
 	StopAllCoroutine( "${0:TARGET}" );
 
-snippet GetComponent<>();
+snippet GetComponent
 abbr GetComponent< component >();
 	GetComponent< ${0:TARGET} >();
 
@@ -234,7 +253,7 @@ snippet Vector2
 abbr Vector2 name = new Vector2( x, y );
 	Vector2 ${1:#:name} = new Vector2( ${2:#:x}, ${3:#:y} );${0:TARGET}
 
-snippet new Vector2
+snippet newVector2
 abbr new Vector2( x, y )
 	new Vector2( ${1:#:x}, ${1:#:y} )${0:TARGET}
 
@@ -242,27 +261,27 @@ snippet Vector3
 abbr Vector3 name = new Vector3( x, y, z );
 	Vector3 ${1:#:name} = new Vector3( ${2:#:x}, ${3:#:y}, ${4:#:z} );${0:TARGET}
 	
-snippet new Vector3
+snippet newVector3
 abbr new Vector3( x, y, z )
 	new Vector3( ${1:#:x}, ${2:#:y}, ${3:#:z} )${0:TARGET}
 
-snippet Vector2.Distance()
+snippet Vector2.Distance
 abbr Vector2.Distance( Vector2, Vector2 )
 	Vector2.Distance( ${1:#:Vector2}, ${2:#:Vector2} )${0:TARGET}
 
-snippet Vector3.Distance()
+snippet Vector3.Distance
 abbr Vector3.Distance( Vector3, Vector3 )
 	Vector3.Distance( ${1:#:Vector3}, ${2:#:Vector3} )${0:TARGET}
 
-snippet Vector2.Lerp()
+snippet Vector2.Lerp
 abbr Vector2.Lerp( from, to, time )
 	Vector2.Lerp( ${1:#:Vector2}, ${2:#:Vector2}, ${3:#:Time} )${0:TARGET}
 	
-snippet Vector3.Lerp()
+snippet Vector3.Lerp
 abbr Vector3.Lerp( from, to, time )
 	Vector3.Lerp( ${1:#:Vector3}, ${2:#:Vector3}, ${3:#:Time} )${0:TARGET}
 
-snippet Vector3.Slerp()
+snippet Vector3.Slerp
 abbr Vector3.Slerp( from, to, time )
 	Vector3.Slerp( ${1:#:Vector3}, ${2:#:Vector3}, ${3:#:Time} )${0:TARGET}
 	
@@ -314,6 +333,26 @@ snippet Vector3.back
 abbr Vector3.back
 	Vector3.back
 
+snippet Translate
+abbr Translate( x, y, z )
+	Translate( ${1:#:x}, ${2:#:y}, ${3:#:z} )
+
+snippet Rotate
+abbr Rotate( x, y, z )
+	Rotate( ${1:#:x}, ${2:#:y}, ${3:#:z} )
+
+snippet GetChild
+abbr GetChild( int )
+	GetChild( ${0:TARGET} )
+
+snippet Find
+abbr Find( int )
+	Find( ${0:TARGET} )
+
+snippet DetachChildren
+abbr DetachChildren()
+	DetachChildren()
+
 snippet Time.time
 abbr Time.time
 	Time.time
@@ -332,3 +371,35 @@ abbr Time.fixedDeltaTime
 
 snippet Time.timeScale
 abbr Time.timeScale
+
+snippet Rect
+abbr Rect rect = new Rect( x, y, width, height )
+	Rect ${1:#:name} = new Rect( ${2:#:x}, ${3:#:y}, ${4:#:width}, ${5:#:height} )${0:TARGET}
+
+snippet newRect
+abbr new Rect( x, y, width, height )
+	new Rect( ${1:#:x}, ${2:#:y}, ${3:#:width}, ${4:#:height} )${0:TARGET}
+
+snippet DynamicRect()
+abbr new Rect( ( Screen.width * percent ) - ( width * 0.5f ), ( Screen.height * percent ) - ( height * 0.5f ), width, height )
+	new Rect( ( Screen.width * ${1:#:percent} ) - ( ${2:#:width} * 0.5f ), ( Screen.height * ${3:#:percent} ) - ( ${4:#:height} * 0.5f ), ${5:#:width}, ${6:#:height} )${0:TARGET}
+
+snippet GUI.Label()
+abbr GUI.Label( Rect, string )
+	GUI.Label( ${1:#:Rect}, ${2:#:string} )${0:TARGET}
+
+snippet GUI.Box()
+abbr GUI.Box( Rect, string )
+	GUI.Box( ${1:#:rect}, ${2:#:string} )${0:TARGET}
+	
+snippet GUI.Button()
+abbr GUI.Button( Rect, string )
+	GUI.Button( ${1:#:Rect}, ${2:#:string} )${0:TARGET}
+
+snippet GUI.Button(Rect)
+abbr GUI.Button( new Rect(), string )
+	GUI.Button( new Rect( ${1:#:x}, ${2:#:y}, ${3:#:width}, ${4:#:height}, ${5:#:string} )${0:TARGET}
+
+snippet GUI.Button(DynamicRect)
+abbr GUI.Button( new DynamicRect(), string )
+	GUI.Button( new Rect( ( Screen.width * ${1:#:percent} ) - ( ${2:#:width} * 0.5f ), ( Screen.height * ${3:#:percent} ) - ( ${4:#:height} * 0.5f ), ${5:#:width}, ${6:#:height} ), ${7:#:string} )${0:TARGET}
