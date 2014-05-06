@@ -1,23 +1,35 @@
 snippet if () {}
-abbr if () {}
-	if (${1:#:Condition}) {
+abbr if ( condition ) {}
+	if ( ${1:#:condition} ) {
+		${0:TARGET}
+	}
+
+snippet else {}
+abbr else {}
+	else {
+		${0:TARGET}
+	}
+
+snippet else if () {}
+abbr else if ( condition ) {}
+	else if ( ${1:#:condition} ) {
 		${0:TARGET}
 	}
 
 snippet for () {}
 abbr for () {}
-	for ( int i = 0; i < ${1:#:Condition}; i++ ) {
+	for ( int i = 0; i < ${1:#:condition}; i++ ) {
 		${0:TARGET}
 	}
 
 snippet foreach () {}
 abbr foreach () {}
-	foreach ( ${1:#:Type} ${2:#:Instance} in ${3:#:Object} ) {
+	foreach ( ${1:#:type} ${2:#:instance} in ${3:#:Object} ) {
 		${0:TARGET}
 	}
 
 snippet while () {}
-abbr while () {}
+abbr while ( condition ) {}
 	while ( ${1:#:Condition} ) {
 		${0:TARGET}
 	}
@@ -37,111 +49,286 @@ abbr case : break;
 		break;
 
 snippet List<>
-alias list<>
-abbr List< > list = new List< >();
+abbr List< type > list = new List< type >();
 	List< ${1:#:type} > ${2:#:name} = new List< ${0:TARGET} >();
 
 snippet new List<>();
-abbr new List<>();
+abbr new List< type >();
 	List< ${0:TARGET} >();
 
+snippet Stack<>
+abbr Stack< type > stack = new Stack< type >();
+	Stack< ${1:#:type} > ${2:#:name} = new Stack< ${3:#:type} >();
+
+snippet new Stack<>();
+abbr new Stack< type >();
+	new Stack< ${0:TARGET} >();
+
 snippet Dictionary<> 
-alias dictionary<>
-abbr Dictionary< > dict = new Dictionary< >();
+abbr Dictionary< type > dict = new Dictionary< type >();
 	Dictionary< ${1:#:type}, ${2:#:type} > ${3:#:name} = new Dictionary< ${4:#:type}, ${0:TARGET} >();
 	
 snippet new Dictionary<>();
-abbr new Dictionary<>();
+abbr new Dictionary< type >();
 	new Dictionary< ${1:#:type} >();
 
-
 snippet Debug.Log
-alias debug.log, log
 abbr Debug.Log( "" )
 	Debug.Log( "${1:#:Info}" + ${0:TARGET} );
 
 snippet Debug.LogWarning
-alias debug.logwarning, logwarning, warning
 abbr Debug.LogWarning( "" ) 
 	Debug.LogWarning( "${1:#:Info}" + ${0:TARGET} );
 
 snippet Debug.LogError
-alias debug.error, logerror, error
 abbr Debug.LogError( "" ) 
 	Debug.LogError( "${1:#:Info}" + ${0:TARGET} );
 
+snippet Debug.LogException
+abbr Debug.LogException( "" ) 
+	Debug.LogException( "${1:#:Info}" + ${0:TARGET} );
+
 snippet void Awake () {}
-alias awake () {}, void awake () {}
 abbr void Awake () {}
 	void Awake () {
 		${0:TARGET}
 	}
 
 snippet void Start () {}
-alias start () {}, void start () {}
 abbr void Start () {}
-void Start () {
+	void Start () {
 		${0:TARGET}
 	}
 
-snippet void Update
-alias update () {}, void update () {}
-abbr void Update () {}
-	void Update () {
+snippet void OnEnable () {}
+abbr void OnEnable () {}
+	void OnEnable () {
 		${0:TARGET}
 	}
 
 snippet void FixedUpdate
-alias fixedupdate () {}, void fixedupdate () {}
 abbr void FixedUpdate () {}
 	void FixedUpdate () {
 		${0:TARGET}
 	}
 
+snippet void Update
+abbr void Update () {}
+	void Update () {
+		${0:TARGET}
+	}
+
+snippet void LateUpdate
+abbr void LateUpdate () {}
+	void LateUpdate () {
+		${0:TARGET}
+	}
+
+snippet void OnDisable () {}
+abbr void OnDisable () {}
+	void OnDisable () {
+		${0:TARGET}
+	}
+
+snippet void OnDestroy () {}
+abbr void OnDestroy () {}
+	void OnDestroy () {
+		${0:TARGET}
+	}
+
+snippet void OnGUI
+abbr void OnGUI () {}
+	void OnGUI () {
+		${0:TARGET}
+	}
+
+snippet void OnCollisionEnter () {}
+abbr void OnCollisionEnter () {}
+	void OnCollisionEnter () {
+		${0:TARGET}
+	}
+
+snippet void OnCollisionStay () {}
+abbr void OnCollisionStay () {}
+	void OnCollisionStay () {
+		${0:TARGET}
+	}
+
+snippet void OnCollisionExit () {}
+abbr void OnCollisionExit () {}
+	void OnCollisionExit () {
+		${0:TARGET}
+	}
+	
+snippet void OnTriggerEnter () {}
+abbr void OnTriggerEnter () {}
+	void OnTriggerEnter () {
+		${0:TARGET}
+	}
+
+snippet void OnTriggerStay () {}
+abbr void OnTriggerStay () {}
+	void OnTriggerStay () {
+		${0:TARGET}
+	}
+
+snippet void OnTriggerExit () {}
+abbr void OnTriggerExit () {}
+	void OnTriggerExit () {
+		${0:TARGET}
+	}
+
+snippet void OnApplicationFocus () {}
+abbr void OnApplicationFocus () {}
+	void OnApplicationFocus () {
+		${0:TARGET}
+	}
+
+snippet void OnApplicationPause () {}
+abbr void OnApplicationPause () {}
+	void OnApplicationPause () {
+		${0:TARGET}
+	}
+
+snippet void OnApplicationQuit () {}
+abbr void OnApplicationQuit () {}
+	void OnApplicationQuit () {
+		${0:TARGET}
+	}
+
 snippet IEnumerator () {}
-alias ienumerator, enumerator
-abbr IEnumerator name ( type paramter ) {}
-	IEnumerator ${1:#:name} ( ${2:#:type} ${3:#:parameter} ) {
+abbr IEnumerator name () {}
+	IEnumerator ${1:#:name} () {
 		${0:TARGET}
 	}
 
 snippet StartCoroutine
-alias startcoroutine, coroutine
 abbr StartCoroutine( "name" );
 	StartCoroutine( "${0:TARGET}" );
 	
 snippet StopCoroutine
-alias stopcoroutine, coroutine
 abbr StopCoroutine( "name" );
 	StopCoroutine( "${0:TARGET}" );
-	
 
-snippet GetComponent
-alias getcomponent
-abbr GetComponent< >();
+snippet StopAllCoroutine
+abbr StopAllCoroutine( "name" );
+	StopAllCoroutine( "${0:TARGET}" );
+
+snippet GetComponent<>();
+abbr GetComponent< component >();
 	GetComponent< ${0:TARGET} >();
 
-snippet GameObject.Find
-alias gameobject.find, findgameobject
-abbr GameObject.Find( "" )
-	GameObject.Find( "${0:target}" );
+snippet GetComponents<>();
+abbr GetComponents< component >();
+	GetComponents< ${0:TARGET} >();
 
-snippet FindChild
-alias findchild
-abbr FindChild( "" )
-	FindChild( "${0:target}" );
+snippet GetComponentInChildren<>();
+abbr GetComponentInChildren< component >();
+	GetComponentInChildren< ${0:TARGET} >();
 
-snippet GetChild
-alias getchild
-abbr GetChild( "" )
-	GetChild( "${0:target}" );
+snippet GetComponentsInChildren<>();
+abbr GetComponentsInChildren< component >();
+	GetComponentsInChildren< ${0:TARGET} >();
 
-snippet Input.GetAxis
-alias input.getaxis, getaxis
-abbr Input.GetAxis( "" );
-	Input.GetAxis( "${0:target}" );
+snippet Vector2
+abbr Vector2 name = new Vector2( x, y );
+	Vector2 ${1:#:name} = new Vector2( ${2:#:x}, ${3:#:y} );${0:TARGET}
 
-snippet Input.GetKey
-alias input.getkey, getkey
-abbr Input.GetKey( KeyCode.[Key] );
-	Input.GetKey( KeyCode.${0:target} );
+snippet new Vector2
+abbr new Vector2( x, y )
+	new Vector2( ${1:#:x}, ${1:#:y} )${0:TARGET}
+
+snippet Vector3
+abbr Vector3 name = new Vector3( x, y, z );
+	Vector3 ${1:#:name} = new Vector3( ${2:#:x}, ${3:#:y}, ${4:#:z} );${0:TARGET}
+	
+snippet new Vector3
+abbr new Vector3( x, y, z )
+	new Vector3( ${1:#:x}, ${2:#:y}, ${3:#:z} )${0:TARGET}
+
+snippet Vector2.Distance()
+abbr Vector2.Distance( Vector2, Vector2 )
+	Vector2.Distance( ${1:#:Vector2}, ${2:#:Vector2} )${0:TARGET}
+
+snippet Vector3.Distance()
+abbr Vector3.Distance( Vector3, Vector3 )
+	Vector3.Distance( ${1:#:Vector3}, ${2:#:Vector3} )${0:TARGET}
+
+snippet Vector2.Lerp()
+abbr Vector2.Lerp( from, to, time )
+	Vector2.Lerp( ${1:#:Vector2}, ${2:#:Vector2}, ${3:#:Time} )${0:TARGET}
+	
+snippet Vector3.Lerp()
+abbr Vector3.Lerp( from, to, time )
+	Vector3.Lerp( ${1:#:Vector3}, ${2:#:Vector3}, ${3:#:Time} )${0:TARGET}
+
+snippet Vector3.Slerp()
+abbr Vector3.Slerp( from, to, time )
+	Vector3.Slerp( ${1:#:Vector3}, ${2:#:Vector3}, ${3:#:Time} )${0:TARGET}
+	
+snippet Vector2.zero
+abbr Vector2.zero
+	Vector2.zero
+
+snippet Vector2.one
+abbr Vector2.one
+	Vector2.one
+
+snippet Vector2.up
+abbr Vector2.up
+	Vector2.up
+
+snippet Vector2.right
+abbr Vector2.right
+	Vector2.right
+
+snippet Vector3.zero
+abbr Vector3.zero
+	Vector3.zero
+
+snippet Vector3.one
+abbr Vector3.one
+	Vector3.one
+
+snippet Vector3.up
+abbr Vector3.up
+	Vector3.up
+	
+snippet Vector3.down
+abbr Vector3.down
+	Vector3.down
+
+snippet Vector3.right
+abbr Vector3.right
+	Vector3.right
+
+snippet Vector3.left
+abbr Vector3.left
+	Vector3.left
+
+snippet Vector3.forward
+abbr Vector3.forward
+	Vector3.forward
+
+snippet Vector3.back
+abbr Vector3.back
+	Vector3.back
+
+snippet Time.time
+abbr Time.time
+	Time.time
+
+snippet Time.fixedTime
+abbr Time.fixedTime
+	Time.fixedTime
+	
+snippet Time.deltaTime
+abbr Time.deltaTime
+	Time.deltaTime
+
+snippet Time.fixedDeltaTime
+abbr Time.fixedDeltaTime
+	Time.fixedDeltaTime
+
+snippet Time.timeScale
+abbr Time.timeScale
