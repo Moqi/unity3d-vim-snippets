@@ -89,9 +89,19 @@ abbr new Dictionary< type >();
 snippet Debug.Log
 alias log
 abbr Debug.Log( "" )
+	Debug.Log( "${1:#:Info}" );
+
+snippet Debug.LogData
+alias log
+abbr Debug.Log( "" )
 	Debug.Log( "${1:#:Info}" + ${0:TARGET} );
 
 snippet Debug.LogWarning
+alias warn
+abbr Debug.LogWarning( "" ) 
+	Debug.LogWarning( "${1:#:Info}" );
+
+snippet Debug.LogWarningData
 alias warn
 abbr Debug.LogWarning( "" ) 
 	Debug.LogWarning( "${1:#:Info}" + ${0:TARGET} );
@@ -99,9 +109,19 @@ abbr Debug.LogWarning( "" )
 snippet Debug.LogError
 alias error
 abbr Debug.LogError( "" ) 
+	Debug.LogError( "${1:#:Info}" );
+
+snippet Debug.LogErrorData
+alias error
+abbr Debug.LogError( "" ) 
 	Debug.LogError( "${1:#:Info}" + ${0:TARGET} );
 
 snippet Debug.LogException
+alias exception
+abbr Debug.LogException( "" ) 
+	Debug.LogException( "${1:#:Info}" );
+
+snippet Debug.LogExceptionData
 alias exception
 abbr Debug.LogException( "" ) 
 	Debug.LogException( "${1:#:Info}" + ${0:TARGET} );
