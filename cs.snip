@@ -92,7 +92,7 @@ abbr Debug.Log( "" )
 	Debug.Log( "${1:#:Info}" );
 
 snippet Debug.LogData
-alias log
+alias logData
 abbr Debug.Log( "" )
 	Debug.Log( "${1:#:Info}" + ${0:TARGET} );
 
@@ -102,7 +102,7 @@ abbr Debug.LogWarning( "" )
 	Debug.LogWarning( "${1:#:Info}" );
 
 snippet Debug.LogWarningData
-alias warn
+alias warnData
 abbr Debug.LogWarning( "" ) 
 	Debug.LogWarning( "${1:#:Info}" + ${0:TARGET} );
 
@@ -112,7 +112,7 @@ abbr Debug.LogError( "" )
 	Debug.LogError( "${1:#:Info}" );
 
 snippet Debug.LogErrorData
-alias error
+alias errorData
 abbr Debug.LogError( "" ) 
 	Debug.LogError( "${1:#:Info}" + ${0:TARGET} );
 
@@ -122,7 +122,7 @@ abbr Debug.LogException( "" )
 	Debug.LogException( "${1:#:Info}" );
 
 snippet Debug.LogExceptionData
-alias exception
+alias exceptionData
 abbr Debug.LogException( "" ) 
 	Debug.LogException( "${1:#:Info}" + ${0:TARGET} );
 
@@ -444,3 +444,15 @@ abbr GUI.Button( new Rect(), string )
 snippet GUI.Button(RectDynamic)
 abbr GUI.Button( new DynamicRect(), string )
 	GUI.Button( new Rect( ( Screen.width * ${1:#:percent} ) - ( ${3:#:width} * 0.5f ), ( Screen.height * ${2:#:percent} ) - ( ${5:#:height} * 0.5f ), ${4:#:width}, ${6:#:height} ), ${7:#:string} )${0:TARGET}
+
+snippet GUILayout.Label
+abbr GUILayout.Label( string )
+	GUILayout.Label( ${0:TARGET} )
+	
+snippet GUILayout.Button
+abbr GUILayout.Button( string )
+	GUILayout.Label( ${0:TARGET} )
+
+snippet EditorGUILayout.TextField
+abbr EditorGUILayout.TextField( string, variable )
+	EditorGUILayout.TextField( ${1:#:string, ${2:#:variable} )${0:TARGET}
