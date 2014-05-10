@@ -488,3 +488,66 @@ abbr GUILayout.Button( string )
 snippet EditorGUILayout.TextField
 abbr EditorGUILayout.TextField( string, variable )
 	EditorGUILayout.TextField( ${1:#:string, ${2:#:variable} );${0:TARGET}
+
+snippet ifeditor
+alias #ifeditor, oneditor
+abbr #if UNITY_EDITOR
+	#if UNITY_EDITOR
+		${0:TARGET}
+	#endif
+
+snippet ifstandalone
+alias #ifstandalone, onstandalone
+abbr #if UNITY_STANDALONE
+	#if UNITY_STANDALONE
+		${0:TARGET}
+	#endif
+
+snippet ifstandaloneOSX
+alias #ifosx, onstandaloneOSX
+abbr #if UNITY_STANDALONE_OSX
+	#if UNITY_STANDALONE_OSX
+		${0:TARGET}
+	#endif
+
+snippet ifstandaloneWIN
+alias #ifwin, onstandaloneWIN
+abbr #if UNITY_STANDALONE_WIN
+	#if UNITY_STANDALONE_WIN
+		${0:TARGET}
+	#endif
+
+snippet ifstandaloneLINUX
+alias #iflinux, onlinux
+abbr #if UNITY_STANDALONE_LINUX
+	#if UNITY_STANDALONE_LINUX
+		${0:TARGET}
+	#endif
+
+snippet ifwebplayer
+alias #ifebplayer, onwebplayer
+abbr #if UNITY_WEBPLAYER
+	#if UNITY_WEBPLAYER
+		${0:TARGET}
+	#endif
+
+snippet ifandroid
+alias #ifandroid, onandroid
+abbr #if UNITY_ANDROID
+	#if UNITY_ANDROID
+		${0:TARGET}
+	#endif
+
+snippet ifios
+alias #ifios, onios
+abbr #if UNITY_IOS
+	#if UNITY_IOS
+		${0:TARGET}
+	#endif
+
+snippet ifwp8
+alias #ifwp8, onwp8
+abbr #if UNITY_WP8
+	#if UNITY_WP8
+		${0:TARGET}
+	#endif
