@@ -273,6 +273,10 @@ abbr IEnumerator name () {}
 		${0:TARGET}
 	}
 
+snippet Instantiate
+abbr Instantiate( instance ) as Type;
+	Instantiate( ${0:#:instance} ) as ${1:#:type};${0:TARGET}
+
 snippet StartCoroutine
 abbr StartCoroutine( "name" );
 	StartCoroutine( "${0:#:name}" );${0:TARGET}
